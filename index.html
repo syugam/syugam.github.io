@@ -344,11 +344,11 @@
 <li>优点：不用配置额外的运行环境</li>
 </ul>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
-<li>解压</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">ECHO OFF</div><div class="line">rem 解压文件存放路径，可以是可访问的网络路径:\\192.169.1.1\....</div><div class="line">SET DestinationPath=C:\Users\Syugam\Desktop\demo\<span class="built_in">test</span></div><div class="line">rem 7z软件安装路径</div><div class="line">SET PATH= <span class="string">"C:\Program Files\7-Zip\7z.exe"</span></div><div class="line">rem 压缩文件存放路径</div><div class="line">SET SourcePath=C:\Users\Syugam\Desktop</div><div class="line">rem 压缩文件名字</div><div class="line">SET ObjectFile=Demo.7z</div><div class="line"></div><div class="line">rem 以下为处理过程：</div><div class="line">rem 1.如无目标存放路径，则建立路径。</div><div class="line">rem 2.复制源文件到指定存放路径，解压缩并删除源文件</div><div class="line">IF not exist %DestinationPath% (MD %DestinationPath%)</div><div class="line"><span class="built_in">cd</span> /d %DestinationPath%</div><div class="line">IF exist <span class="string">"%SourcePath%\%ObjectFile%"</span> (</div><div class="line">  copy <span class="string">"%SourcePath%\%ObjectFile%"</span> %DestinationPath%	</div><div class="line">  %PATH% e -y %SourcePath%\%ObjectFile%</div><div class="line">  del <span class="string">"%SourcePath%\%ObjectFile%"</span>	   </div><div class="line">) ELSE (</div><div class="line">  <span class="built_in">echo</span> ON</div><div class="line">  <span class="built_in">echo</span> No File can be found!</div><div class="line">  pause </div><div class="line">  <span class="built_in">exit</span></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> ON</div></pre></td></tr></table></figure>
-<ul>
-<li>压缩<pre><code class="bash">ECHO off
+<li><p>解压</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">ECHO OFF</div><div class="line">rem 解压文件存放路径，可以是可访问的网络路径:\\192.169.1.1\....</div><div class="line">SET DestinationPath=C:\Users\Syugam\Desktop\demo\<span class="built_in">test</span></div><div class="line">rem 7z软件安装路径</div><div class="line">SET PATH= <span class="string">"C:\Program Files\7-Zip\7z.exe"</span></div><div class="line">rem 压缩文件存放路径</div><div class="line">SET SourcePath=C:\Users\Syugam\Desktop</div><div class="line">rem 压缩文件名字</div><div class="line">SET ObjectFile=Demo.7z</div><div class="line"></div><div class="line">rem 以下为处理过程：</div><div class="line">rem 1.如无目标存放路径，则建立路径。</div><div class="line">rem 2.复制源文件到指定存放路径，解压缩并删除源文件</div><div class="line">IF not exist %DestinationPath% (MD %DestinationPath%)</div><div class="line"><span class="built_in">cd</span> /d %DestinationPath%</div><div class="line">IF exist <span class="string">"%SourcePath%\%ObjectFile%"</span> (</div><div class="line">  copy <span class="string">"%SourcePath%\%ObjectFile%"</span> %DestinationPath%	</div><div class="line">  %PATH% e -y %SourcePath%\%ObjectFile%</div><div class="line">  del <span class="string">"%SourcePath%\%ObjectFile%"</span>	   </div><div class="line">) ELSE (</div><div class="line">  <span class="built_in">echo</span> ON</div><div class="line">  <span class="built_in">echo</span> No File can be found!</div><div class="line">  pause </div><div class="line">  <span class="built_in">exit</span></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> ON</div></pre></td></tr></table></figure>
+</li>
+<li><p>压缩</p>
+<pre><code class="bash">ECHO off
 rem 压缩文件存放目录
 SET TransferPath=\\192.168.1.1\Transfer\Syugam
 SET PATH= <span class="string">"C:\Program Files\7-Zip\7z.exe"</span>
@@ -447,7 +447,7 @@ ECHO ON</span>
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -456,7 +456,7 @@ ECHO ON</span>
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
