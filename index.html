@@ -345,32 +345,32 @@
 </ul>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
 <li><p>解压</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">ECHO OFF</div><div class="line">rem 解压文件存放路径，可以是可访问的网络路径:\\192.169.1.1\....</div><div class="line">SET DestinationPath=C:\Users\Syugam\Desktop\demo\<span class="built_in">test</span></div><div class="line">rem 7z软件安装路径</div><div class="line">SET PATH= <span class="string">"C:\Program Files\7-Zip\7z.exe"</span></div><div class="line">rem 压缩文件存放路径</div><div class="line">SET SourcePath=C:\Users\Syugam\Desktop</div><div class="line">rem 压缩文件名字</div><div class="line">SET ObjectFile=Demo.7z</div><div class="line"></div><div class="line">rem 以下为处理过程：</div><div class="line">rem 1.如无目标存放路径，则建立路径。</div><div class="line">rem 2.复制源文件到指定存放路径，解压缩并删除源文件</div><div class="line">IF not exist %DestinationPath% (MD %DestinationPath%)</div><div class="line"><span class="built_in">cd</span> /d %DestinationPath%</div><div class="line">IF exist <span class="string">"%SourcePath%\%ObjectFile%"</span> (</div><div class="line">  copy <span class="string">"%SourcePath%\%ObjectFile%"</span> %DestinationPath%	</div><div class="line">  %PATH% e -y %SourcePath%\%ObjectFile%</div><div class="line">  del <span class="string">"%SourcePath%\%ObjectFile%"</span>	   </div><div class="line">) ELSE (</div><div class="line">  <span class="built_in">echo</span> ON</div><div class="line">  <span class="built_in">echo</span> No File can be found!</div><div class="line">  pause </div><div class="line">  <span class="built_in">exit</span></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> ON</div></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> OFF</div><div class="line">rem 解压文件存放路径，可以是可访问的网络路径:\\192.169.1.1\....</div><div class="line"><span class="built_in">set</span> DestinationPath=C:\Users\Syugam\Desktop\demo\<span class="built_in">test</span></div><div class="line">rem 7z软件安装路径</div><div class="line"><span class="built_in">set</span> PATH= <span class="string">"C:\Program Files\7-Zip\7z.exe"</span></div><div class="line">rem 压缩文件存放路径</div><div class="line"><span class="built_in">set</span> SourcePath=C:\Users\Syugam\Desktop</div><div class="line">rem 压缩文件名字</div><div class="line"><span class="built_in">set</span> ObjectFile=Demo.7z</div><div class="line"></div><div class="line">rem 以下为处理过程：</div><div class="line">rem 1.如无目标存放路径，则建立路径。</div><div class="line">rem 2.复制源文件到指定存放路径，解压缩并删除源文件</div><div class="line"><span class="keyword">if</span> not exist %DestinationPath% (MD %DestinationPath%)</div><div class="line"><span class="built_in">cd</span> /d %DestinationPath%</div><div class="line"><span class="keyword">if</span> exist <span class="string">"%SourcePath%\%ObjectFile%"</span> (</div><div class="line">  copy <span class="string">"%SourcePath%\%ObjectFile%"</span> %DestinationPath%	</div><div class="line">  %PATH% e -y %SourcePath%\%ObjectFile%</div><div class="line">  del <span class="string">"%SourcePath%\%ObjectFile%"</span>	   </div><div class="line">) <span class="keyword">else</span> (</div><div class="line">  <span class="built_in">echo</span> ON</div><div class="line">  <span class="built_in">echo</span> No File can be found!</div><div class="line">  pause </div><div class="line">  <span class="built_in">exit</span></div><div class="line">)</div><div class="line"><span class="built_in">echo</span> ON</div></pre></td></tr></table></figure>
 </li>
 <li><p>压缩</p>
-<p>  ``` bash   </p>
-<pre><code>ECHO off
+<pre><code class="bash"><span class="built_in">echo</span> off
 rem 压缩文件存放目录
-SET TransferPath=\\192.168.1.1\Transfer\Syugam
-SET PATH= &quot;C:\Program Files\7-Zip\7z.exe&quot;
+<span class="built_in">set</span> TransferPath=\\192.168.1.1\Transfer\Syugam
+<span class="built_in">set</span> PATH= <span class="string">"C:\Program Files\7-Zip\7z.exe"</span>
 rem 当路径存在空格时，可以加双引号避免路径无法识别
-SET WorkingPath=&quot;C:\Users\Syugam\Desktop\demo\test&quot;
-SET Result=Demo
-</code></pre></li>
+<span class="built_in">set</span> WorkingPath=<span class="string">"C:\Users\Syugam\Desktop\demo\test"</span>
+<span class="built_in">set</span> Result=Demo
+
+<span class="keyword">if</span> not exist %TransferPath% (MD %TransferPath%)
+<span class="built_in">cd</span> /d %WorkingPath%
+<span class="keyword">if</span> exist %Result%.7z DEL %Result%.7z /Q /S
+rem 除了text文件夹下的txt文件，将工作目录下其他的所有文件添加到压缩包Demo.7z
+%PATH% a %Result%.7z <span class="string">".\%ProjectPath%\*"</span> -x!text\*.txt
+rem 删除压缩包中包含的pdf和7z后缀名的文件，删除掉一些不必要的文件以减小压缩包体积
+%PATH% d %Result%.7z *.pdf *.7z
+rem 复制文件并删除工作路径下的压缩文件
+copy /y <span class="string">"%Result%.7z"</span> %TransferPath%\<span class="string">"
+del "</span>%Result%.7z<span class="string">"
+echo ON</span>
+</code></pre>
+</li>
 </ul>
-<pre><code>    IF not exist %TransferPath% (MD %TransferPath%)
-    cd /d %WorkingPath%
-    IF exist %Result%.7z DEL %Result%.7z /Q /S
-    rem 除了text文件夹下的txt文件，将工作目录下其他的所有文件添加到压缩包Demo.7z
-    %PATH% a %Result%.7z &quot;.\%ProjectPath%\*&quot; -x!text\*.txt
-    rem 删除压缩包中包含的pdf和7z后缀名的文件，删除掉一些不必要的文件以减小压缩包体积
-    %PATH% d %Result%.7z *.pdf *.7z
-    rem 复制文件并删除工作路径下的压缩文件
-    COPY /y &quot;%Result%.7z&quot; %TransferPath%\&quot;
-    DEL &quot;%Result%.7z&quot;
-    ECHO ON
-``` 
-</code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
 <li>通过以上批处理程序，可以有效降低频繁进入多级目录操作，提高效率。对于在服务器上延时严重的场景实用性更强。</li>
 <li>批处理命令对空格符号敏感，代码赋值操作需要多加小心。</li>
 <li>更多压缩及解压优化操作请参考7z帮助文档。</li>
