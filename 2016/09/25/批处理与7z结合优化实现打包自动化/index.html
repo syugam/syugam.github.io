@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Embedded System, Programmer, Syugam" />
+  <meta name="keywords" content="自动化,程序设计," />
 
 
 
@@ -84,15 +84,25 @@
 
 
 
-<meta name="description" content="嵌入式设计的日常">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Syugam's Blog">
-<meta property="og:url" content="http://www.syugam.com/index.html">
+<meta name="description" content="缘起   日常工作中经常会对文件进行压缩或解压操作，基于能让电脑承包的事就亲自动手的原则，决定把这些琐事交给批处理命令自动完成。而工作环境都是windows系统，且对知识产权要求严格。
+原理   现在运行的windows操作系统原生都支持批处理命令，7z和winRAR一类压缩软件都支持命令行操作。二者结合，鼠标键盘操作n个步骤的事儿，一键完成，懒人福音。
+
+缺点：批处理程序可读性较差，结构也略显不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批处理与7z结合优化日常操作">
+<meta property="og:url" content="http://www.syugam.com/2016/09/25/批处理与7z结合优化实现打包自动化/index.html">
 <meta property="og:site_name" content="Syugam's Blog">
-<meta property="og:description" content="嵌入式设计的日常">
+<meta property="og:description" content="缘起   日常工作中经常会对文件进行压缩或解压操作，基于能让电脑承包的事就亲自动手的原则，决定把这些琐事交给批处理命令自动完成。而工作环境都是windows系统，且对知识产权要求严格。
+原理   现在运行的windows操作系统原生都支持批处理命令，7z和winRAR一类压缩软件都支持命令行操作。二者结合，鼠标键盘操作n个步骤的事儿，一键完成，懒人福音。
+
+缺点：批处理程序可读性较差，结构也略显不">
+<meta property="og:updated_time" content="2016-09-28T14:39:08.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Syugam's Blog">
-<meta name="twitter:description" content="嵌入式设计的日常">
+<meta name="twitter:title" content="批处理与7z结合优化日常操作">
+<meta name="twitter:description" content="缘起   日常工作中经常会对文件进行压缩或解压操作，基于能让电脑承包的事就亲自动手的原则，决定把这些琐事交给批处理命令自动完成。而工作环境都是windows系统，且对知识产权要求严格。
+原理   现在运行的windows操作系统原生都支持批处理命令，7z和winRAR一类压缩软件都支持命令行操作。二者结合，鼠标键盘操作n个步骤的事儿，一键完成，懒人福音。
+
+缺点：批处理程序可读性较差，结构也略显不">
 
 
 
@@ -113,9 +123,9 @@
 
 
 
-  <link rel="canonical" href="http://www.syugam.com/"/>
+  <link rel="canonical" href="http://www.syugam.com/2016/09/25/批处理与7z结合优化实现打包自动化/"/>
 
-  <title> Syugam's Blog </title>
+  <title> 批处理与7z结合优化日常操作 | Syugam's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +146,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,9 +243,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -257,10 +265,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/25/批处理与7z结合优化实现打包自动化/" itemprop="url">
-                  批处理与7z结合优化日常操作
-                </a>
+                批处理与7z结合优化日常操作
               
             
           </h1>
@@ -335,9 +340,7 @@
       
 
       
-        
-          
-            <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>   日常工作中经常会对文件进行压缩或解压操作，基于能让电脑承包的事就亲自动手的原则，决定把这些琐事交给批处理命令自动完成。而工作环境都是windows系统，且对知识产权要求严格。</p>
+        <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>   日常工作中经常会对文件进行压缩或解压操作，基于能让电脑承包的事就亲自动手的原则，决定把这些琐事交给批处理命令自动完成。而工作环境都是windows系统，且对知识产权要求严格。</p>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>   现在运行的windows操作系统原生都支持批处理命令，7z和winRAR一类压缩软件都支持命令行操作。二者结合，鼠标键盘操作n个步骤的事儿，一键完成，懒人福音。</p>
 <ul>
 <li>缺点：批处理程序可读性较差，结构也略显不足，也无法在其他操作系统上面复用。</li>
@@ -371,36 +374,45 @@ ECHO ON</span>
 </ul>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过以上批处理程序，可以有效降低频繁进入多级目录操作，提高效率。对于在服务器上延时严重的场景实用性更强。</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/自动化-程序设计/" rel="tag">#自动化,程序设计</a>
+          
+        </div>
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -408,6 +420,14 @@ ECHO ON</span>
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/25/批处理与7z结合优化实现打包自动化/"
+           data-title="批处理与7z结合优化日常操作" data-url="http://www.syugam.com/2016/09/25/批处理与7z结合优化实现打包自动化/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -427,8 +447,17 @@ ECHO ON</span>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -478,6 +507,17 @@ ECHO ON</span>
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#缘起"><span class="nav-number">1.</span> <span class="nav-text">缘起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -574,6 +614,10 @@ ECHO ON</span>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
