@@ -259,7 +259,7 @@
               
                 
                 <a class="post-title-link" href="/2016/10/07/利用Excel自动生成代码模板/" itemprop="url">
-                  利用Excel自动生成代码模板
+                  利用Excel自动生成模板代码
                 </a>
               
             
@@ -313,7 +313,7 @@
 
           
           
-             <span id="/2016/10/07/利用Excel自动生成代码模板/" class="leancloud_visitors" data-flag-title="利用Excel自动生成代码模板">
+             <span id="/2016/10/07/利用Excel自动生成代码模板/" class="leancloud_visitors" data-flag-title="利用Excel自动生成模板代码">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +337,7 @@
       
         
           
-            <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p> 平时做的嵌入式项目都是基于C语言的，代码模块化设计。每个模块除了功能逻辑，还需要需要进行单元测试，所以每个模块基本都包含至少六个文件，结构如下：</p>
+            <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p> 平时做的嵌入式项目都是基于C语言的，实行模块化设计。每个模块除了实现功能逻辑，还需要需要进行单元测试，所以每个模块基本都包含至少六个文件，结构如下：</p>
 <pre><code>|
 |-Application
 |  |--function.h
@@ -348,7 +348,7 @@
 |-UnitTest
 |  |--UnitTest.c
 |  |--UnitTest.h
-</code></pre><p>虽然模块不同，但是这些文件的结构变化不大，之前利用Eclipse的xml模板生成这部分代码，但灵活性不足，感觉效率欠佳。后来发现Excel可以通过VBA实现创建目录结构，代码文件和代码生成框架，效率提升明显。</p>
+</code></pre><p>虽然模块不同，但是这些文件的结构变化不大，之前利用Eclipse的xml模板生成这部分代码，但灵活性不足，感觉效率欠佳。后来发现Excel可以通过VBA实现创建目录结构，代码文件和代码框架生成，于是DIY一个满足自己日常使用的代码生成工具。</p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
 <li>VBA调用MkDir “path”生成文件目录</li>
 <li>调用CreatFile函数生成目标源文件，如Set g_Module.Appl_h = CreatFile(FilePath)</li>
